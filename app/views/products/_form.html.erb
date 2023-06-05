@@ -1,0 +1,21 @@
+<div class="container col-4">
+  <%= render "devise/shared/error_messages", resource: @product %>
+  <%= form_with model: @product do |form| %>
+    <div class="mb-3">
+      <%= form.label :product_name, class: "form-label" %>
+      <%= form.text_field :product_name, class: "form-control", placeholder: "Enter product name" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :description, class: "form-label" %>
+      <%= form.text_area :description, class: "form-control", placeholder: "Enter Description" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :price, class: "form-label" %>
+      <%= form.number_field :price, min: 0, class: "form-control", placeholder: "Enter Price" %>
+    </div>
+
+    <%= form.submit value: text, class: 'btn btn-success rounded-1 px-3 mt-4' %>
+  <% end %>
+</div>
